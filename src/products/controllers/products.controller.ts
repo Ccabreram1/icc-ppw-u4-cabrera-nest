@@ -1,5 +1,5 @@
 import { Body, Controller, Delete, Get, Param, Patch, Post, Put } from '@nestjs/common';
-import { Product } from '../entities/product.entity';
+import { ProductEntity } from '../entities/product.entity';
 import { ProductMapper } from '../mappers/product.mapper';
 import { PartialUpdateProductsDto } from '../dtos/partial-update-products.dto';
 import { ProductsService } from '../services/products.service';
@@ -33,10 +33,10 @@ export class ProductsController {
 
     @Patch(':id')
     partialUpdate(
-        @Param('id') id: string,
+        @Param('id') id: number,
         @Body() dto: PartialUpdateProductsDto
     ) {
-        return this.service.partialUpdate(Number(id), dto);
+        return this.service.partialUpdate(id, dto);
     }
 
     @Delete(':id')

@@ -1,12 +1,12 @@
-import { User } from "../entities/user.entity"
+import { UserEntity } from "../entities/user.entity"
 
 export class UserMapper{
 
     static toEntity(id: number, dto: any){
-        return new User(id, dto.name, dto.email, dto.password);
+        return new UserEntity();
     }
 
-    static toResponse (entity: User){
+    static toResponse (entity: UserEntity){
         return{
             id: entity.id,
             name: entity.name,

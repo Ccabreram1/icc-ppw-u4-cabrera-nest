@@ -1,6 +1,6 @@
 import { Body, Controller, Delete, Get, Param, Patch, Post, Put } from '@nestjs/common';
 import { UserMapper } from '../mappers/user.mapper';
-import { User } from '../entities/user.entity';
+import { UserEntity } from '../entities/user.entity';
 import { CreateUserDto } from '../dtos/create-user.dto';
 import { PartialUpdateUserDto } from '../dtos/partial-update-user.dto';
 import { error } from 'console';
